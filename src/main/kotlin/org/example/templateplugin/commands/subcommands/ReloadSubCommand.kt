@@ -12,6 +12,7 @@ class ReloadSubCommand(private val plugin: TemplatePluginMain): SubCommandBase {
         val reloadResults = hashMapOf<String, Boolean>()
 
         reloadResults["config.conf"] = plugin.mainConfigObj.reloadConfig()
+        reloadResults["messages.conf"] = plugin.langConfigObj.reloadConfig()
 
         val failedReloads = reloadResults.filterValues { !it }
         if (failedReloads.isNotEmpty()) {
@@ -23,6 +24,7 @@ class ReloadSubCommand(private val plugin: TemplatePluginMain): SubCommandBase {
         }
 
         plugin.mainConfig = plugin.mainConfigObj.getConfig()
+        plugin.langConfig = plugin.langConfigObj.getConfig()
 
         MessageHelper.reloadPrefix()
         MessageHelper.sendMessage(sender, "<green>Plugin Reloaded!")

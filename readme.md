@@ -1,3 +1,9 @@
+# Paper Plugin Template
+
+Please keep in mind that the template has not been updated since May 2022.
+
+This template was primarily used to quickly setup new plugins for the [SloCraft](https://slocraft.eu) network.
+
 ## Getting Started
 
 ### General
